@@ -27,6 +27,8 @@ void toolbooth::display() {
     cout << "Cars: " << cars << ", " << "Money: " << money << endl;
 }
 
+toolbooth::~toolbooth() {};
+
 int main() {
     toolbooth T;
     char input;

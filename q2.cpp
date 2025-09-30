@@ -33,7 +33,7 @@ void myStack::push(int a) {
 };
 int myStack::pop() {
     if (topidx == -1) {
-        return;
+        return -1;
     }
     int popped = arr[topidx];
     topidx--;
@@ -43,19 +43,30 @@ int myStack::pop() {
 
 int myStack::top() {
     if (topidx == -1) {
-        return;
+        return -1;
     }
     else return arr[topidx];
 
 }
 
+bool myStack::isempty() {
+    if (topidx == -1) {
+        return true;
+    }
+    return false;
+}
+
 
 int main() {
     myStack stack(10);
+    cout << stack.isempty() << endl;
     stack.push(10);
     stack.push(20);
     stack.push(30);
     stack.push(40);
     stack.push(50);
-    stack.pop();
+    cout << stack.pop() << endl;
+    cout << stack.pop() << endl;
+    cout << stack.top() << endl;
+    cout << stack.isempty() << endl;
 }
